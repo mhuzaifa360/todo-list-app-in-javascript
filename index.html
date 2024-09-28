@@ -27,6 +27,8 @@
             align-items: center;
             flex-direction: column;
             border-radius: 20px;
+            border: 4px solid rgb(255, 255, 255);
+            outline: 9px outset gray;
         }
         input{
             width: 70%;
@@ -49,6 +51,12 @@
             background: #000;
             color: white;
         }
+        button:hover{
+            background: #ffff;
+            color: black;
+            border: 2px solid black;
+            font-weight: 600;
+        }
 
     </style>
 </head>
@@ -56,12 +64,24 @@
     <div class="container">
         <h2>To-do List</h2>
         <input type="text" placeholder="Enter new task" id="task-input">
-        <button>Add To-Do</button>
+        <button id="task-btn" onclick="taskAdding">Add To-Do</button>
         <ul id="task-list"></ul>
     </div>
 
     <script>
+        function taskAdding(){
+            var inputTask = document.getElementById('task-input')
+            var listTask = document.getElementById('task-list')
+            
+            
 
+            if (!inputTask.value.trim()){
+                return alert("Input is required")
+            }
+
+            var li = document.createElement("li")
+            li.textContent = inputTask.value;
+        }
     </script>
 </body>
 </html>
