@@ -68,10 +68,12 @@
     </style>
 </head>
 <body>
+
+
     <div class="container">
         <h2>To-do List</h2>
         <input type="text" placeholder="Enter new task" id="task-input">
-        <button onclick="taskAdding()">Add To-Do</button>
+        <button onClick="taskAdding()">Add To-Do</button>
         <ul id="task-list"></ul>
     </div>
 
@@ -93,7 +95,7 @@
 
             var removeBtn = document.createElement('button')
             removeBtn.textContent = "Remove"
-            removebtn.className = "remove-btn"
+            removeBtn.className = "remove-btn"
             removeBtn.onclick = function(){
                 listTask.removeChild("li")
             }
@@ -102,7 +104,8 @@
                 li.classList.toggle("completed")
             }
 
-            li.appendChild(removeBtn)
+            li.appendChild(removeBtn);
+        
 
             listTask.appendChild("li")
 
